@@ -1,6 +1,13 @@
 :root {
+	--background-color: rgb(13, 7, 20);
+	--main-color: rgb(158, 120, 207);
+	--grey-text: rgb(119, 119, 119);
+	--todo-block-color: rgb(21, 16, 28);
+	--border-input-color: rgb(62, 22, 113);
 }
 
 body {
 	margin: 0;
+	padding: 0;
+	background: var(--background-color);
 }
