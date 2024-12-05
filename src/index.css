@@ -4,10 +4,20 @@
 	--grey-text: rgb(119, 119, 119);
 	--todo-block-color: rgb(21, 16, 28);
 	--border-input-color: rgb(62, 22, 113);
+	--white-color: #fff;
 }
 
 body {
 	margin: 0;
 	padding: 0;
 	background: var(--background-color);
+	font-family: 'Roboto', sans-serif;
+}
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
 }
