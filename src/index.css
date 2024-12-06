@@ -1,6 +1,7 @@
 :root {
 	--background-color: rgb(13, 7, 20);
 	--main-color: rgb(158, 120, 207);
+	--main-color-hover: rgb(142, 109, 186);
 	--grey-text: rgb(119, 119, 119);
 	--todo-block-color: rgb(21, 16, 28);
 	--border-input-color: rgb(62, 22, 113);
