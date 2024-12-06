@@ -1,4 +1,4 @@
-import { useId, useState } from 'react';
+import { useState } from 'react';
 import Headling from '../Headling/Headling';
 import Todo from '../Todo/Todo';
 import styles from './Todoapp.module.css';
@@ -6,8 +6,6 @@ import styles from './Todoapp.module.css';
 function Todoapp() {
 	const [todo, setTodo] = useState<string>('');
 	const [todos, setTodos] = useState<string[]>([]);
-
-	const id = useId();
 
 	const addTodo = (e: React.FormEvent): void => {
 		e.preventDefault();
@@ -33,6 +31,7 @@ function Todoapp() {
 						onChange={e => setTodo(e.target.value)}
 						type='text'
 						placeholder='Введите новую задачу'
+						onKeyDown={e => e.key === 'Enter' && addTodo(e)}
 					></input>
 					<button onClick={addTodo}>
 						<img src='/add.svg' alt='Иконка добавить задачу' />
@@ -45,7 +44,7 @@ function Todoapp() {
 			<div className={styles['todo-list']}>
 				<div>
 					{todos.map(item => (
-						<Todo key={id} item={item} onDelete={() => deleteTodo(item)} />
+						<Todo key={item} item={item} onDelete={() => deleteTodo(item)} />
 					))}
 				</div>
 			</div>
