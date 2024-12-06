@@ -1,11 +1,16 @@
-import { TodoProps } from './Todo.props'
+import styles from './Todo.module.css';
+import { TodoProps } from './Todo.props';
 
-function Todo({ item, key, onDelete }: TodoProps) {
+function Todo({ item, onDelete }: TodoProps) {
 	return (
-		<div>
-			<span key={key}>{item}</span>
-			<button onClick={onDelete}>Удалить</button>
-		</div>
+		<>
+			<div className={styles['todo']}>
+				<span className={styles['text']}>{item}</span>
+				<button className={styles['button']} onClick={onDelete}>
+					<img src='/delite.svg' alt='Иконка удаления' />
+				</button>
+			</div>
+		</>
 	);
 }
 

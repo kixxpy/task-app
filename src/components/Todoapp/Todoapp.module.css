@@ -1,3 +1,6 @@
+.app {
+	display: flex;
+}
 .input {
 	display: flex;
 	gap: 11px;
@@ -25,4 +28,23 @@
 }
 .todo {
 	color: var(--white-color);
+}
+.count {
+	margin-top: 30px;
+	margin-bottom: 15px;
+	font-size: 16px;
+	font-weight: 400;
+	color: var(--white-color);
+}
+.todo-list {
+	height: 390px;
+	display: flex;
+	flex-direction: column;
+	overflow: scroll;
+}
+.headling {
+	margin-top: 40px;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 30px;
 }

@@ -2,10 +2,10 @@ import cn from 'classnames';
 import styles from './Headling.module.css';
 import { HeadlingProps } from './Headling.props';
 
-function Headling({ size, children }: HeadlingProps) {
+function Headling({ size, children, className }: HeadlingProps) {
 	return (
 		<div
-			className={cn(styles.headling, {
+			className={cn(styles.headling, className, {
 				[styles.big]: size === 'big',
 				[styles.medium]: size === 'smile',
 			})}

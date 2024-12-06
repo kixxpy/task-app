@@ -1,0 +1,36 @@
+.todo {
+	border: none;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	min-width: 432px;
+	min-height: 70px;
+	background: var(--todo-block-color);
+	border-radius: 10px;
+	padding: 21px;
+	box-sizing: border-box;
+	margin-bottom: 15px;
+}
+.text {
+	font-size: 16px;
+	font-weight: 400;
+	color: var(--main-color);
+	flex: 1;
+	cursor: default;
+}
+.button {
+	width: 30px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 5px;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+	background: var(--todo-block-color);
+	transition: all 0.3s ease-in-out;
+}
+.button:hover {
+	background: var(--background-color);
+}

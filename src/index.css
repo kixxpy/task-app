@@ -7,17 +7,24 @@
 	--border-input-color: rgb(62, 22, 113);
 	--white-color: #fff;
 }
+html {
+	background-color: var(--background-color);
+}
 
 body {
 	margin: 0;
 	padding: 0;
 	background: var(--background-color);
 	font-family: 'Roboto', sans-serif;
+	box-sizing: border-box;
+	scrollbar-width: thin;
+	scrollbar-color: var(--main-color) var(--background-color);
 }
 .container {
+	background: var(--background-color);
+	height: 100dvh;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
-	height: 100vh;
+	flex-direction: column;
 }

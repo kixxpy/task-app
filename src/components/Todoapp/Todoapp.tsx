@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useId, useState } from 'react';
+import Headling from '../Headling/Headling';
 import Todo from '../Todo/Todo';
 import styles from './Todoapp.module.css';
 
@@ -6,9 +7,11 @@ function Todoapp() {
 	const [todo, setTodo] = useState<string>('');
 	const [todos, setTodos] = useState<string[]>([]);
 
+	const id = useId();
+
 	const addTodo = (e: React.FormEvent): void => {
 		e.preventDefault();
-		if (todo.length > 1) {
+		if (todo.length > 0) {
 			setTodos([...todos, todo]);
 			setTodo('');
 		}
@@ -20,22 +23,31 @@ function Todoapp() {
 
 	return (
 		<>
-			<div className={styles['input']}>
-				<input
-					value={todo}
-					onChange={e => setTodo(e.target.value)}
-					type='text'
-					placeholder='Введите новую задачу'
-				></input>
-				<button onClick={addTodo}>
-					<img src='/add.svg' alt='Иконка добавить задачу' />
-				</button>
-			</div>
 			<div>
-				{todos.length > 0 && <div>Запланированных задач - {todos.length}</div>}
-				{todos.map((item, index) => (
-					<Todo item={item} key={index} onDelete={() => deleteTodo(item)} />
-				))}
+				<Headling className={styles['headling']} size='big'>
+					Task App
+				</Headling>
+				<div className={styles['input']}>
+					<input
+						value={todo}
+						onChange={e => setTodo(e.target.value)}
+						type='text'
+						placeholder='Введите новую задачу'
+					></input>
+					<button onClick={addTodo}>
+						<img src='/add.svg' alt='Иконка добавить задачу' />
+					</button>
+				</div>
+			</div>
+			{todos.length > 0 && (
+				<div className={styles['count']}>Число задач - {todos.length}</div>
+			)}
+			<div className={styles['todo-list']}>
+				<div>
+					{todos.map(item => (
+						<Todo key={id} item={item} onDelete={() => deleteTodo(item)} />
+					))}
+				</div>
 			</div>
 		</>
 	);
